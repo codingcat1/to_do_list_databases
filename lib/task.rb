@@ -7,4 +7,8 @@ class Task
     @name
   end
 
+  def self.all
+    []
+  end
+
 end
