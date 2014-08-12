@@ -33,8 +33,8 @@ describe List do
   end
 
   it 'is the same list if it has the same name' do
-    list1 = Task.new('Do Stuff')
-    list2 = Task.new('Do Stuff')
+    list1 = List.new('Some List')
+    list2 = List.new('Some List')
     expect(list1).to eq list2
   end
 
