@@ -1,14 +1,5 @@
-require 'rspec'
-require 'list'
-require 'pg'
+require 'spec_helper'
 
-DB = PG.connect(:dbname => 'to_do_list_test')
-
-Rspec.configure do |config|
-  config.after(:each) do
-    DB.exec("DELETE FROM lists *;")
-  end
-end
 
 describe List do
 

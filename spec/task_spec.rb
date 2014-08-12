@@ -1,15 +1,4 @@
-require 'task'
-# require 'rspec'
-require 'pg'
-
-
-DB = PG.connect(:dbname => 'to_do_list_test')
-
-Rspec.configure do |config|
-  config.after(:each) do
-    DB.exec("DELETE FROM tasks *;")
-  end
-end
+require 'spec_helper'
 
 describe Task do
   it 'is initialized with a name and task ID' do
@@ -37,7 +26,7 @@ describe Task do
     expect(Task.all).to eq [task]
   end
 
-  it 'Is the same task if it has the same name and list ID' do
+  it 'is the same task if it has the same name and list ID' do
     task1 = Task.new('Do Stuff', 1)
     task2 = Task.new('Do Stuff', 1)
     expect(task1).to eq task2
