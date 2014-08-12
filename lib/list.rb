@@ -1,6 +1,7 @@
 class List
-  def initialize(name)
+  def initialize(name, id=nil)
     @name = name
+    @id = id
   end
 
   def name
@@ -25,9 +26,15 @@ class List
     lists = []
     results.each do |result|
       name = result['name']
-      lists << List.new(name)
+      id = result['id'].to_i
+      lists << List.new(name, id)
     end
     lists
+  end
+
+  def clear_database
+
+
   end
 
 end

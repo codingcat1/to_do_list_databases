@@ -1,7 +1,7 @@
 require 'pg'
 
 class Task
-  def initialize(name, list_id)
+  def initialize(name, list_id=nil)
     @name = name
     @list_id = list_id
   end
