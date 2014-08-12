@@ -32,7 +32,7 @@ describe List do
     expect(List.all).to eq [list]
   end
 
-  it 'Is the same list if it has the same name' do
+  it 'is the same list if it has the same name' do
     list1 = Task.new('Do Stuff')
     list2 = Task.new('Do Stuff')
     expect(list1).to eq list2
