@@ -38,5 +38,11 @@ describe List do
     expect(list1).to eq list2
   end
 
+  it 'sets the ID when you save it' do
+    list = List.new('Some List')
+    list.save
+    expect(list.id).to be_an_instance_of Fixnum
+  end
+
 end
 
