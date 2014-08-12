@@ -22,5 +22,21 @@ describe List do
     expect(list.name).to eq 'Some List'
   end
 
+  it "starts with no lists" do
+    expect(List.all).to eq []
+  end
+
+  it 'lets you save lists to the database' do
+    list = List.new('Some List')
+    list.save
+    expect(List.all).to eq [list]
+  end
+
+  it 'Is the same list if it has the same name' do
+    list1 = Task.new('Do Stuff')
+    list2 = Task.new('Do Stuff')
+    expect(list1).to eq list2
+  end
+
 end
 
